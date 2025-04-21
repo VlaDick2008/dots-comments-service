@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>api</name>
+    </assembly>
+    <members>
+        <member name="T:CommentsController">
+            <summary>
+            Сomments controller
+            </summary>
+        </member>
+        <member name="M:CommentsController.AddComment(Api.CommentDTOs.CommentCreateDto)">
+            <summary>
+            Adds a new comment to a specific dot.
+            </summary>
+            <param name="dto">The comment data transfer object containing the dot ID, text, and background.</param>
+            <returns>The created <see cref="T:Comment"/> if successful, otherwise a <see cref="T:Microsoft.AspNetCore.Mvc.NotFoundResult"/> if the dot is not found.</returns>
+        </member>
+        <member name="M:CommentsController.UpdateComment(System.Int32,Api.CommentDTOs.CommentUpdateDto)">
+            <summary>
+            Updates a comment.
+            </summary>
+            <param name="id">The id of the comment to update.</param>
+            <param name="dto">The updated comment.</param>
+            <returns>A <see cref="T:Microsoft.AspNetCore.Mvc.NoContentResult"/> if successful, otherwise a <see cref="T:Microsoft.AspNetCore.Mvc.BadRequestResult"/> or a <see cref="T:Microsoft.AspNetCore.Mvc.NotFoundResult"/>.</returns>
+        </member>
+        <member name="T:DotsController">
+            <summary>
+            Dots controller
+            </summary>
+        </member>
+        <member name="M:DotsController.GetDots">
+            <summary>
+            Gets all dots, including their comments.
+            </summary>
+            <returns>The list of dots.</returns>
+        </member>
+        <member name="M:DotsController.AddDot(Api.DotDTOs.DotCreateDto)">
+            <summary>
+            Adds a new dot.
+            </summary>
+            <param name="dto">The dot data transfer object containing the dot's properties.</param>
+            <returns>The created <see cref="T:Dot"/> if successful, otherwise a <see cref="T:Microsoft.AspNetCore.Mvc.NotFoundResult"/>.</returns>
+        </member>
+        <member name="M:DotsController.DeleteDot(System.Int32)">
+            <summary>
+            Deletes a dot.
+            </summary>
+            <param name="id">The id of the dot to delete.</param>
+            <returns>A <see cref="T:Microsoft.AspNetCore.Mvc.NoContentResult"/> if successful, otherwise a <see cref="T:Microsoft.AspNetCore.Mvc.NotFoundResult"/>.</returns>
+        </member>
+        <member name="M:DotsController.UpdateDot(System.Int32,Api.DotDTOs.DotUpdateDto)">
+            <summary>
+            Updates a dot.
+            </summary>
+            <param name="id">The id of the dot to update.</param>
+            <param name="dto">The updated dot.</param>
+            <returns>A <see cref="T:Microsoft.AspNetCore.Mvc.NoContentResult"/> if successful, otherwise a <see cref="T:Microsoft.AspNetCore.Mvc.BadRequestResult"/> or a <see cref="T:Microsoft.AspNetCore.Mvc.NotFoundResult"/>.</returns>
+        </member>
+        <member name="T:Api.Data.ApplicationDbContext">
+            <summary>
+            The application's database context.
+            </summary>
+        </member>
+        <member name="P:Api.Data.ApplicationDbContext.Dots">
+            <summary>
+            The collection of dots.
+            </summary>
+        </member>
+        <member name="P:Api.Data.ApplicationDbContext.Comments">
+            <summary>
+            The collection of comments.
+            </summary>
+        </member>
+        <member name="M:Api.Data.ApplicationDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Api.Data.ApplicationDbContext})">
+            <summary>
+            Initializes a new instance of the ApplicationDbContext class.
+            </summary>
+            <param name="options">The DbContextOptions for the application database context.</param>
+        </member>
+        <member name="M:Api.Data.ApplicationDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Configures the model for the application database.
+            </summary>
+            <param name="modelBuilder">The model builder to configure.</param>
+        </member>
+        <member name="T:Comment">
+            <summary>
+            Comment model.
+            </summary>
+        </member>
+        <member name="P:Comment.Dot">
+            <summary>
+            Navigation property
+            </summary>
+        </member>
+        <member name="T:Dot">
+            <summary>
+            Dot model.
+            </summary>
+        </member>
+    </members>
+</doc>
