@@ -6,6 +6,7 @@
 		"watch": "esbuild src/app.ts --bundle --outdir=dist --platform=browser --sourcemap --watch"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
 		"@types/node": "^22.14.1",
 		"esbuild": "^0.25.2",
 		"typescript": "^5.8.3"
