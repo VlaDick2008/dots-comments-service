@@ -52,14 +52,21 @@ public class DotsController : ControllerBase
     public async Task<IActionResult> DeleteDot(int id)
     {
         var dot = await _dbContext.Dots.FindAsync(id);
-
         if (dot == null)
         {
             return NotFound();
         }
 
         _dbContext.Dots.Remove(dot);
-        await _dbContext.SaveChangesAsync();
+
+        try
+        {
+            await _dbContext.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            return NotFound();
+        }
 
         return NoContent();
     }

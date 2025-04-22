@@ -7,8 +7,7 @@ import type {
 	DotUpdateDto,
 } from "./models";
 
-const baseUrl = process.env.BASE_URL;
-//|| "http://localhost:5246/api";
+const baseUrl = "http://localhost:5246/api";
 
 // Dots
 

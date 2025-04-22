@@ -2,16 +2,23 @@
 	"name": "dot-comments-client",
 	"version": "1.0.0",
 	"scripts": {
-		"build": "esbuild src/app.ts --bundle --outdir=dist --platform=browser --sourcemap",
-		"watch": "esbuild src/app.ts --bundle --outdir=dist --platform=browser --sourcemap --watch"
+		"start": "bun run build && bunx serve -s dist",
+		"dev": "bunx esbuild src/app.ts --bundle --outdir=dist --platform=browser --sourcemap --watch",
+		"build": "bunx esbuild src/app.ts --bundle --outdir=dist --platform=browser --minify ",
+		"build:dev": "bunx esbuild src/app.ts --bundle --outdir=dist --platform=browser --sourcemap",
+		"clean": "rm -rf dist",
+		"copy-assets": "cp -r public/* dist/"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
+		"@types/jquery": "^3.5.32",
 		"@types/node": "^22.14.1",
 		"esbuild": "^0.25.2",
+		"serve": "^14.2.1",
 		"typescript": "^5.8.3"
 	},
 	"dependencies": {
+		"@progress/kendo-ui": "^2025.1.227",
 		"jquery": "^3.7.1",
 		"konva": "^9.3.20"
 	}
