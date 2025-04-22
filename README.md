@@ -1,8 +1,9 @@
+
 # dots‑comments‑service
 
 Набор сервисов для работы с точками и комментариями к ним:  
 – **API** на .NET 9.0 с In‑Memory базой данных и Swagger-ом;  
-– **Client** на TypeScript с Bun, Esbuild и Konva для визуализации точек и их комментариев :contentReference[oaicite:0]{index=0}.
+– **Client** на TypeScript с Bun, Esbuild и Konva для визуализации точек и их комментариев.
 
 ---
 
@@ -20,14 +21,14 @@
 
 | Компонент | Стек |
 |---|---|
-| **API** | .NET 9.0, ASP.NET Core Web API, Entity Framework Core (InMemory), Swagger, CORS :contentReference[oaicite:1]{index=1} |
-| **Client** | TypeScript, Bun, Esbuild, Konva.js, jQuery, Kendo UI :contentReference[oaicite:2]{index=2} |
+| **API** | .NET 9.0, ASP.NET Core Web API, Entity Framework Core (InMemory), Swagger, CORS |
+| **Client** | TypeScript, Bun, Esbuild, Konva.js, jQuery, Kendo UI |
 
 ---
 
 ## Требования
 
-- [.NET 9.0 SDK](https://dotnet.microsoft.com/download)  
+- [.NET 9.0 SDK](https://dotnet.microsoft.com/download)  
 - [Bun](https://bun.sh/)  
 - Node.js 
 - Git  
@@ -36,18 +37,33 @@
 
 ## Установка
 
-# Клонировать репозиторий
+### Клонировать репозиторий
 ```bash
 git clone https://github.com/VlaDick2008/dots-comments-service.git
 cd dots-comments-service
 ```
-# Перейти в папку API и восстановить зависимости
+### Перейти в папку API и восстановить зависимости
 ```bash
 cd api
 dotnet restore
 ```
 
-# Перейти в папку Client и установить зависимости
+### Перейти в папку Client и установить зависимости
 ```bash
 cd ../client
+bun install
 ```
+
+## Запуск
+
+### Перейти в папку API
+```bash
+dotnet run
+```
+
+### Перейти в папку Client, собрать проект
+```bash
+bun run build
+```
+
+Затем, откройте index.html из папки public.
